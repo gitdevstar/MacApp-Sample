@@ -717,7 +717,7 @@
                                     <subviews>
                                         <collectionView id="enM-aL-cJH">
                                             <rect key="frame" x="0.0" y="0.0" width="530" height="158"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="Klg-tU-4mF">
                                                 <size key="itemSize" width="50" height="50"/>
                                             </collectionViewFlowLayout>
@@ -767,24 +767,24 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mWK-Y9-c3S">
-                                                                    <rect key="frame" x="-2" y="26" width="515" height="16"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="ffY-Dw-ki7">
+                                                                    <rect key="frame" x="8" y="16" width="495" height="16"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Label" id="ffY-Dw-ki7">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RwR-aD-hgS">
-                                                                    <rect key="frame" x="-2" y="47" width="515" height="16"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="DF0-Qh-G22">
+                                                                    <rect key="frame" x="8" y="37" width="495" height="16"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Label" id="DF0-Qh-G22">
                                                                         <font key="font" usesAppearanceFont="YES"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nIm-a2-JeE">
-                                                                    <rect key="frame" x="-2" y="5" width="515" height="16"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="kb0-g2-JUe">
+                                                                    <rect key="frame" x="8" y="-5" width="495" height="16"/>
+                                                                    <textFieldCell key="cell" title="Label" id="kb0-g2-JUe">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -792,15 +792,15 @@
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="RwR-aD-hgS" firstAttribute="leading" secondItem="wod-f8-5iQ" secondAttribute="leading" id="IhM-VQ-xoT"/>
+                                                                <constraint firstItem="RwR-aD-hgS" firstAttribute="leading" secondItem="wod-f8-5iQ" secondAttribute="leading" constant="10" id="IhM-VQ-xoT"/>
                                                                 <constraint firstItem="nIm-a2-JeE" firstAttribute="top" secondItem="mWK-Y9-c3S" secondAttribute="bottom" constant="5" id="OpN-Vv-1rR"/>
                                                                 <constraint firstItem="mWK-Y9-c3S" firstAttribute="top" secondItem="RwR-aD-hgS" secondAttribute="bottom" constant="5" id="Quc-Kw-7SJ"/>
-                                                                <constraint firstAttribute="trailing" secondItem="RwR-aD-hgS" secondAttribute="trailing" id="RKg-V1-Idw"/>
-                                                                <constraint firstAttribute="trailing" secondItem="nIm-a2-JeE" secondAttribute="trailing" id="ifx-Xk-5dX"/>
-                                                                <constraint firstItem="RwR-aD-hgS" firstAttribute="top" secondItem="wod-f8-5iQ" secondAttribute="top" id="izF-lO-cnG"/>
-                                                                <constraint firstAttribute="trailing" secondItem="mWK-Y9-c3S" secondAttribute="trailing" id="rc6-P2-CBU"/>
-                                                                <constraint firstItem="mWK-Y9-c3S" firstAttribute="leading" secondItem="wod-f8-5iQ" secondAttribute="leading" id="rpA-Vi-1vj"/>
-                                                                <constraint firstItem="nIm-a2-JeE" firstAttribute="leading" secondItem="wod-f8-5iQ" secondAttribute="leading" id="yor-3M-aty"/>
+                                                                <constraint firstAttribute="trailing" secondItem="RwR-aD-hgS" secondAttribute="trailing" constant="10" id="RKg-V1-Idw"/>
+                                                                <constraint firstAttribute="trailing" secondItem="nIm-a2-JeE" secondAttribute="trailing" constant="10" id="ifx-Xk-5dX"/>
+                                                                <constraint firstItem="RwR-aD-hgS" firstAttribute="top" secondItem="wod-f8-5iQ" secondAttribute="top" constant="10" id="izF-lO-cnG"/>
+                                                                <constraint firstAttribute="trailing" secondItem="mWK-Y9-c3S" secondAttribute="trailing" constant="10" id="rc6-P2-CBU"/>
+                                                                <constraint firstItem="mWK-Y9-c3S" firstAttribute="leading" secondItem="wod-f8-5iQ" secondAttribute="leading" constant="10" id="rpA-Vi-1vj"/>
+                                                                <constraint firstItem="nIm-a2-JeE" firstAttribute="leading" secondItem="wod-f8-5iQ" secondAttribute="leading" constant="10" id="yor-3M-aty"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="lbDate" destination="mWK-Y9-c3S" id="N6P-5D-FME"/>
@@ -818,7 +818,7 @@
                                     <constraint firstAttribute="width" constant="530" id="mVV-Gg-Nmx"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="WRO-jG-5ea">
-                                    <rect key="frame" x="1" y="118" width="238" height="16"/>
+                                    <rect key="frame" x="1" y="424" width="528" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fYo-TE-chj">
@@ -863,7 +863,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="851"/>
         </scene>
     </scenes>
 </document>

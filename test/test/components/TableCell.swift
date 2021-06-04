@@ -12,5 +12,11 @@ class TableCell: NSTableCellView {
     @IBOutlet weak var lbDate: NSTextField!
     @IBOutlet weak var lbDescription: NSTextField!
     
-    
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        
+        self.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
+        self.layer?.borderWidth = 1
+        self.layer?.borderColor = .white
+    }
 }

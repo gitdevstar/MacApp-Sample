@@ -13,12 +13,12 @@ class MainController: NSViewController {
     let data1 = [[
         "title": "title11",
         "date": "date11",
-        "description": "description11"
+        "description": "yes, only the dynamic height for the table cells from the existing works you have done, no need the pop-up page, yes, only the dynamic height for the table cells from the existing works you have done, no need the pop-up page, yes, only the dynamic height for the table cells from the existing works you have done, no need the pop-up page"
     ],
     [
         "title": "title12",
         "date": "date12",
-        "description": "description12"
+        "description": "description12 yes, only the dynamic height for the table cells from the existing works you have done, no need the pop-up page"
     ],
     [
         "title": "title13",
@@ -75,18 +75,22 @@ class MainController: NSViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
-            
+            tableView.cell?.isBordered = true
         }
     }
     
-    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureCollectionView()
-        tableData = data1
         // Do any additional setup after loading the view.
+        tableData = data1
+        tableView.reloadData()
+        
     }
 
     override var representedObject: Any? {
@@ -95,9 +99,6 @@ class MainController: NSViewController {
         }
     }
     
-    func configureCollectionView() {
-        
-    }
 
     @IBAction func actionNext(_ sender: Any) {
         let alert = NSAlert()
@@ -133,19 +134,27 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
         }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-            return 73
+        let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "tableCell")
+        guard let cell = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? TableCell else { return 0 }
+        let book = Book(fromDictionary: tableData[row])
+        let desHeight = cell.lbDescription.bestheight(text: book.description!, width: 511)
+        print(desHeight)
+            return 63 + desHeight
         }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
 //        let currentPurchase = viewModel.purchases[row]
         
-     let book = Book(fromDictionary: tableData[row])
+        let book = Book(fromDictionary: tableData[row])
         let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "tableCell")
-            guard let cell = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? TableCell else { return nil }
+        guard let cell = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? TableCell else { return nil }
         cell.lbDate.stringValue = book.date!
         cell.lbDescription.stringValue = book.description!
+        
         cell.lbTitle.stringValue = book.title!
 //        cell.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
+//        cell.layer?.borderWidth = 1
+//        cell.layer?.borderColor = .white
         return cell
         
     }
@@ -180,6 +189,9 @@ extension MainController: NSCollectionViewDataSource, NSCollectionViewDelegate  
             
             self.tableView.reloadData()
         }
+        
+        item.textField?.stringValue = "Cell\(indexPath.item+1)"
+        
         return item
     }
 }

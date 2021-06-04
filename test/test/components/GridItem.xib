@@ -15,10 +15,25 @@
         <customView id="c22-O7-iKe">
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rpz-qQ-AJS">
+                    <rect key="frame" x="220" y="128" width="40" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Gha-WX-vFc">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="rpz-qQ-AJS" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="RxX-qC-hIn"/>
+                <constraint firstItem="rpz-qQ-AJS" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="ZKd-De-foZ"/>
+            </constraints>
             <point key="canvasLocation" x="-42" y="50"/>
         </customView>
         <collectionViewItem title="gridItem" nibName="GridItem" id="zYB-i5-4wo" customClass="GridItem" customModule="test" customModuleProvider="target">
             <connections>
+                <outlet property="textField" destination="rpz-qQ-AJS" id="gvU-Rb-hVM"/>
                 <outlet property="view" destination="c22-O7-iKe" id="TAP-SA-uya"/>
             </connections>
         </collectionViewItem>

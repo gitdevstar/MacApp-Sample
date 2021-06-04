@@ -35,4 +35,5 @@ class GridItem: NSCollectionViewItem {
     
     var selectView: (() -> ())?
     
+    
 }
