@@ -717,11 +717,15 @@
                                     <subviews>
                                         <collectionView id="enM-aL-cJH">
                                             <rect key="frame" x="0.0" y="0.0" width="530" height="158"/>
-                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="Klg-tU-4mF">
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="eUa-l5-PSn">
                                                 <size key="itemSize" width="50" height="50"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="1vm-mi-OgD"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="BIy-fd-9Ys"/>
+                                            </connections>
                                         </collectionView>
                                     </subviews>
                                 </clipView>

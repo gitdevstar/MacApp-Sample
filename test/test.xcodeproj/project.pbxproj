@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D339418B266A0F9F0007F09F /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339418A266A0F9F0007F09F /* NSTextField.swift */; };
+		D3394190266A4E1F0007F09F /* CustomCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339418F266A4E1F0007F09F /* CustomCollectionFlowLayout.swift */; };
 		D3DF2C9326694C9F001812FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF2C9226694C9F001812FE /* AppDelegate.swift */; };
 		D3DF2C9526694C9F001812FE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF2C9426694C9F001812FE /* MainController.swift */; };
 		D3DF2C9726694CA8001812FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DF2C9626694CA8001812FE /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		D339418A266A0F9F0007F09F /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
+		D339418F266A4E1F0007F09F /* CustomCollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionFlowLayout.swift; sourceTree = "<group>"; };
 		D3DF2C8F26694C9F001812FE /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DF2C9226694C9F001812FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3DF2C9426694C9F001812FE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				D339418A266A0F9F0007F09F /* NSTextField.swift */,
+				D339418F266A4E1F0007F09F /* CustomCollectionFlowLayout.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3394190266A4E1F0007F09F /* CustomCollectionFlowLayout.swift in Sources */,
 				D339418B266A0F9F0007F09F /* NSTextField.swift in Sources */,
 				D3DF2D092669B6FD001812FE /* TableCell.swift in Sources */,
 				D3DF2D002669B57F001812FE /* Book.swift in Sources */,

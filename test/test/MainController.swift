@@ -24,7 +24,23 @@ class MainController: NSViewController {
         "title": "title13",
         "date": "date13",
         "description": "description13"
-    ]]
+    ],
+    [
+        "title": "title11",
+        "date": "date11",
+        "description": "yes, only the dynamic height for the table cells from the existing works you have done, no need the pop-up page, yes, only the dynamic height for the table cells from the existing works you have done, no need the pop-up page, yes, only the dynamic height for the table cells from the existing works you have done, no need the pop-up page"
+    ],
+    [
+        "title": "title12",
+        "date": "date12",
+        "description": "description12 yes, only the dynamic height for the table cells from the existing works you have done, no need the pop-up page"
+    ],
+    [
+        "title": "title13",
+        "date": "date13",
+        "description": "description13"
+    ]
+    ]
     
     let data2 = [[
         "title": "title21",
@@ -57,6 +73,8 @@ class MainController: NSViewController {
         "date": "date33",
         "description": "description33"
     ]]
+    
+    var cellTitles = ["Cell1", "Cell23425234", "Cell3", "Cell23425234"]
     
     var tableData = [[String: Any]]()
     
@@ -130,7 +148,7 @@ class MainController: NSViewController {
 extension MainController: NSTableViewDelegate, NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-            return 3
+        return tableData.count
         }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -138,7 +156,7 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
         guard let cell = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? TableCell else { return 0 }
         let book = Book(fromDictionary: tableData[row])
         let desHeight = cell.lbDescription.bestheight(text: book.description!, width: 511)
-        print(desHeight)
+//        print(desHeight)
             return 63 + desHeight
         }
     
@@ -160,12 +178,31 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
     }
 }
 
+extension MainController: NSCollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+        
+//        guard let item = collectionView.makeItem(withIdentifier: gridItemIdentifier, for: indexPath) as? GridItem else {
+//            return NSSize(width: 150.0, height: 150.0)
+//
+//        }
+
+//        let width = item.textField?.bestwidth(text: self.cellTitles[indexPath.item], height: 20)
+//        print(width!)
+//        return NSSize(width: (width! + 90), height: 150.0)
+        
+        return NSSize(width: 150.0, height: 150.0)
+    }
+}
+
 extension MainController: NSCollectionViewDataSource, NSCollectionViewDelegate  {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
+    
+    
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        
         guard let item = collectionView.makeItem(withIdentifier: gridItemIdentifier, for: indexPath) as? GridItem else {
             return NSCollectionViewItem()
             
@@ -190,7 +227,7 @@ extension MainController: NSCollectionViewDataSource, NSCollectionViewDelegate  
             self.tableView.reloadData()
         }
         
-        item.textField?.stringValue = "Cell\(indexPath.item+1)"
+        item.textField?.stringValue = self.cellTitles[indexPath.item]
         
         return item
     }
