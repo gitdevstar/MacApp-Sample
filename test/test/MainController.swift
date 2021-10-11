@@ -180,14 +180,17 @@ extension MainController: NSTableViewDelegate, NSTableViewDataSource {
 
 extension MainController: NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-        
+        print("here")
+        guard let item = collectionView.item(at: indexPath) as? GridItem else {
+            return NSSize(width: 150.0, height: 150.0)
+        }
 //        guard let item = collectionView.makeItem(withIdentifier: gridItemIdentifier, for: indexPath) as? GridItem else {
 //            return NSSize(width: 150.0, height: 150.0)
 //
 //        }
-
-//        let width = item.textField?.bestwidth(text: self.cellTitles[indexPath.item], height: 20)
-//        print(width!)
+        print(item)
+        let width = item.textField?.bestwidth(text: self.cellTitles[indexPath.item], height: 20)
+        print(width!)
 //        return NSSize(width: (width! + 90), height: 150.0)
         
         return NSSize(width: 150.0, height: 150.0)
